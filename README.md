@@ -2,121 +2,153 @@
 
 **Bridging Skills. Connecting Opportunities.**
 
-[![Backend: FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Orchestration: LangGraph](https://img.shields.io/badge/Agents-LangGraph-4f46e5?style=flat-square)](https://langchain-ai.github.io/langgraph/)
-[![Frontend: React + TypeScript](https://img.shields.io/badge/Frontend-React%2018%20%2B%20TypeScript-3178c6?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
-[![Tests: Pytest & Vitest](https://img.shields.io/badge/Tests-Pytest%2021%2F21%20%7C%20Vitest%2011%2F11-10b981?style=flat-square)](#testing-linting--build-verification)
-[![i18n: 8 Languages](https://img.shields.io/badge/Languages-8%20Indian%20%2B%20English-f59e0b?style=flat-square)](#eight-language-support)
+ThiranSetu is an Agentic AI-powered career intelligence platform that connects verified skill assessment, industry insights, personalized career recommendations, company-based job matching and multilingual learning pathways.
 
-**ThiranSetu** is an agentic AI-powered skill intelligence, career recommendation, company requirement-based job matching, and multilingual learning platform. It guides learners from verified skill assessments through gap diagnostics, explainable career rankings, structured job-description matching, and adaptive learning roadmaps.
-
-> [!IMPORTANT]
-> **Strict Data Integrity & Verification Policy:** ThiranSetu never presents synthetic demonstration records as genuine company vacancies, never invents undisclosed salaries or course ratings, and excludes unverified courses without direct `https://` URLs from verified recommendations.
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-4f46e5?style=flat-square)](https://langchain-ai.github.io/langgraph/)
+[![React](https://img.shields.io/badge/Frontend-React%2018-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![SQLAlchemy](https://img.shields.io/badge/ORM-SQLAlchemy-d71f00?style=flat-square)](https://www.sqlalchemy.org/)
+[![Google Gemini](https://img.shields.io/badge/LLM-Google%20Gemini-4285f4?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
+[![i18n](https://img.shields.io/badge/Languages-8%20Supported-10b981?style=flat-square)](#supported-languages)
 
 ---
 
 ## Table of Contents
 
-- [Key Capabilities](#key-capabilities)
-- [Multi-Agent Architecture](#multi-agent-architecture)
-- [Data Integrity & Verification](#data-integrity--verification)
-- [Eight-Language Support & Accessibility](#eight-language-support--accessibility)
-- [Tech Stack & Project Structure](#tech-stack--project-structure)
-- [API Overview](#api-overview)
-- [Local Setup & Running](#local-setup--running)
+- [Application Preview](#application-preview)
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Seven-Agent Architecture](#seven-agent-architecture)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation and Setup](#installation-and-setup)
 - [Environment Variables](#environment-variables)
-- [Testing, Linting & Build Verification](#testing-linting--build-verification)
+- [Testing and Quality Assurance](#testing-and-quality-assurance)
+- [Security and Data Integrity](#security-and-data-integrity)
+- [Supported Languages](#supported-languages)
+- [Roadmap](#roadmap)
+- [GitHub Repository Presentation](#github-repository-presentation)
 
 ---
 
-## Key Capabilities
+## Application Preview
 
-1. **Security-First Authentication & Student Profile**
-   - `scrypt` password hashing, short-lived HS256 JWT access tokens held strictly in memory (never `localStorage`), `HttpOnly` refresh-token rotation with token-version/reuse detection, and CSRF double-submit cookie + `X-CSRF-Token` header enforcement.
-   - Rate limiting with in-memory development fallback and fail-closed (`503`) Redis enforcement in production (`ENVIRONMENT=production`).
-   - Captures education, technical & soft skills, projects, certifications, current vs. preferred locations, relocation & work-mode preferences, salary expectations, and separate app vs. learning languages.
+### Dashboard
 
-2. **Verified Skill Assessment Engine**
-   - Skill-specific assessments across beginner, intermediate, and advanced levels with automatic scoring, strong/weak topic diagnostics, assessment history, and reassessment recency weighting.
+![ThiranSetu Dashboard](docs/screenshots/dashboard.jpg)
 
-3. **Skill Intelligence & Evidence-Backed Obsolescence Detection**
-   - Classifies skills into strong, weak, missing, emerging, stable, and declining/outdated categories using industry context and evidence rather than skill age alone.
-   - Consumes synced company vacancy requirements (`vacancy_requirements`) from shared orchestration state to prioritize missing mandatory skills.
+The **Student Intelligence Dashboard** provides an immediate overview of profile completeness, verified skill counts, learning roadmap progress, salary alignment, top career recommendations, and active agent-run mode, with direct links to assessments, profile updates, and career exploration.
 
-4. **Dynamic 6-Component Career Recommendation Engine**
-   - Ranks career roles using a transparent, deterministic 6-component weighted score (`skill_match`, `interest`, `market_demand`, `location`, `salary`, `experience`)—explicitly framed as skill and preference alignment rather than hiring probability.
+### Skill Assessment
 
-5. **Company Requirement-Based Job Matching & JD Extraction**
-   - Parses pasted company job descriptions to extract mandatory skills, preferred skills, education, minimum experience, location, work mode, and explicitly stated salary ranges (rendering `Not Disclosed` when absent).
-   - Lets users review and edit extracted skills before saving, links skill gaps directly to verified courses, opens official `apply_url` links externally, and tracks application statuses (`saved`, `applied`, `interviewing`, `offer`, `rejected`).
+![ThiranSetu Skill Assessment](docs/screenshots/skill-assessment.png)
 
-6. **Verified Course Discovery & Adaptive Learning Roadmap**
-   - Separately tracks teaching language, audio languages, and subtitle languages across verified courses.
-   - Distinguishes **syllabus-verified equivalents** (backed by shared learning outcomes) from **potential skill overlap** (skill-tag overlap without verified outcome parity).
-   - Generates a prioritized, persistent learning roadmap with practical exercises, portfolio mini-projects, and reassessment prompts upon step completion.
+The **Verified Skill Assessments** workspace lets students choose a technical skill and difficulty level (`Beginner`, `Intermediate`, `Advanced`), complete structured evaluations, compare self-reported vs. verified proficiency scores, inspect weak-topic diagnostics, and retake assessments after upskilling.
 
-7. **AI Career Mentor**
-   - Context-aware career mentor powered by Google Gemini (`gemini-2.5-flash` with a 300-second SHA-256 prompt cache) and automatic deterministic offline fallback when `GEMINI_API_KEY` is omitted or unavailable.
+### Career Recommendations
+
+![ThiranSetu Career Recommendations](docs/screenshots/career-recommendations.jpg)
+
+The **Career Matches** view ranks career paths using a transparent 6-component weighted compatibility breakdown (`skill_match`, `interest`, `market_demand`, `location`, `salary`, `experience`), highlighting matching skills, skills to improve, missing skills, and suggested learning paths.
+
+### Learning Roadmap
+
+![ThiranSetu Learning Roadmap](docs/screenshots/learning-roadmap.jpg)
+
+The **Adaptive Learning Roadmap** translates verified skill gaps and target-career or company-vacancy requirements into prioritized learning steps, complete with estimated study hours, practical exercises, portfolio mini-projects, verified course links, and progress status tracking.
 
 ---
 
-## Multi-Agent Architecture
+## Project Overview
 
-ThiranSetu coordinates **7 specialized AI agents** and **2 conditional escalation/sync nodes** through a LangGraph `StateGraph` (`backend/app/agents/orchestrator.py`), passing structured `OrchestratorState` (`backend/app/agents/state.py`) across nodes and recording execution traces:
+Students and early-career professionals often struggle with fragmented career guidance: self-reported resumes rarely reflect verified proficiency, generic job boards do not explain why a candidate misses a role's mandatory requirements, and online course catalogues seldom connect directly to measurable skill gaps or regional language needs.
+
+**ThiranSetu** addresses this end-to-end journey in one unified platform:
+
+1. **Skill Assessment**: Verifies technical proficiency through leveled assessments rather than relying solely on self-reported claims.
+2. **Skill-Gap Identification**: Classifies strong, weak, missing, unverified, emerging, and declining/outdated skills against target roles and synced company requirements.
+3. **Industry Intelligence**: Tracks demand counts, emerging technologies, and declining skill indicators from verified platform vacancies and curated skill taxonomy data.
+4. **Career Recommendations**: Computes explainable 6-component career compatibility scores across supported roles.
+5. **Company-Based Job Matching**: Extracts mandatory/preferred skills, education, experience, location, work mode, and disclosed salary from company job descriptions, scoring student readiness per vacancy.
+6. **Personalized Course Discovery**: Matches missing skills to verified direct-URL courses with explicit teaching, audio, and subtitle language metadata.
+7. **Adaptive Learning Roadmaps**: Persists ordered, priority-ranked steps that update when assessments, target roles, or company requirements change.
+8. **AI Career Mentor**: Provides context-aware guidance backed by Google Gemini with a deterministic offline fallback.
+
+---
+
+## Key Features
+
+1. **Student Profile Management**: Captures education, college, graduation year, technical and soft skills, projects, certifications, experience, current vs. preferred job locations, relocation willingness, work mode (`remote`, `hybrid`, `onsite`, `any`), expected/minimum salary, and separate UI vs. learning language preferences.
+2. **Skill Assessment and Proficiency Analysis**: Evaluates skills across `beginner`, `intermediate`, and `advanced` tiers with topic-level diagnostics, reassessment recency weighting, and complete attempt history.
+3. **Skill Gap Identification**: Distinguishes verified strong skills (`>= 70%`), weak skills (`< 70%`), self-reported unverified skills, missing role/vacancy skills, and evidence-backed outdated/declining skills.
+4. **Industry and Market Intelligence**: Aggregates skill demand and role demand from verified, non-synthetic platform vacancies alongside curated emerging, stable, and declining skill taxonomy entries.
+5. **AI-Powered Career Recommendations**: Ranks career paths transparently using weighted skill match (45%), interest (15%), market demand (15%), location fit (10%), salary fit (10%), and experience (5%), explicitly framed as compatibility rather than hiring probability.
+6. **Company-Based Job Matching**: Parses pasted job descriptions (`POST /api/jobs/extract`), lets users edit extracted requirements before saving (`POST /api/jobs`), computes match scores, opens official `apply_url` links externally, and tracks application statuses (`saved`, `applied`, `interviewing`, `offer`, `rejected`).
+7. **Mandatory and Preferred Skill Analysis**: Separates mandatory vs. preferred skills during job description extraction, vacancy requirement synchronization, and job compatibility scoring.
+8. **Course Discovery**: Filters courses by skill, platform, teaching language, audio language, subtitle language, price (`free`/`paid`), difficulty, duration, rating, and verified direct-URL availability (`verified_only`).
+9. **Multilingual Learning Support**: Tracks primary teaching language, audio languages, and subtitle languages independently, and compares multilingual course equivalents while distinguishing outcome-backed `syllabus_verified` equivalence from `potential_skill_overlap`.
+10. **Personalized Learning Roadmap**: Generates and persists prioritized steps (`high`, `medium`, `low`) with practical exercises, mini-projects, and verified course recommendations.
+11. **AI Career Mentor**: Answers career, skill-gap, interview, and learning questions using the student's latest orchestrator state via Gemini (`gemini-2.5-flash`) with deterministic fallback.
+12. **Learning Progress Tracking**: Updates step completion (`not_started`, `in_progress`, `completed`), recalculates overall roadmap progress percentage, and flags skills for reassessment upon step completion.
+
+---
+
+## Seven-Agent Architecture
+
+ThiranSetu orchestrates seven specialized agents and two conditional routing nodes in a **LangGraph `StateGraph`** (`backend/app/agents/orchestrator.py`), sharing a typed `OrchestratorState` (`backend/app/agents/state.py`) and recording an ordered execution trace (`AgentRun`) for every run.
 
 ```mermaid
 flowchart LR
-    UI["React + TypeScript SPA<br/>(Vite, Tailwind CSS, 8 Languages)"] -->|REST JSON + Bearer JWT| API["FastAPI Backend<br/>(Security, CSRF & Rate-Limit Middleware)"]
-    API --> DB[("SQLite / SQLAlchemy ORM")]
+    UI["React + TypeScript SPA"] -->|REST JSON + Bearer JWT| API["FastAPI Backend"]
+    API --> DB[("SQLite / SQLAlchemy")]
     API --> Orch["LangGraph StateGraph Orchestrator"]
 
     Orch --> A1["1. Skill Assessment Agent"]
-    A1 -->|"trigger == 'job_added'"| Sync["Vacancy Requirement Sync<br/>(Pydantic-validated state)"]
-    A1 -->|standard flow| A2["2. Skill Intelligence Agent"]
+    A1 -->|"trigger == 'job_added'"| Sync["Vacancy Requirement Sync<br/>(VacancyRequirements -> state)"]
+    A1 -->|"standard trigger"| A2["2. Skill Intelligence Agent"]
     Sync --> A2
-    A2 -->|"score < 60%"| TP["Targeted Practice Escalation"]
+    A2 -->|"needs_targeted_practice == true"| TP["Targeted Practice Escalation"]
     TP --> A3["3. Market Intelligence Agent"]
-    A2 -->|">= 60%"| A3
+    A2 -->|"needs_targeted_practice == false"| A3
     A3 --> A4["4. Career Matching Agent"]
     A4 --> A5["5. Job Requirement & Opportunity Agent"]
-    A5 --> A6["6. Course Discovery & Roadmap Agent"]
+    A5 --> A6["6. Course Discovery & Learning Path Agent"]
     A6 --> A7["7. AI Career Mentor Agent"]
 
-    A7 --> Gem["Gemini API Client<br/>(300s Cache + Deterministic Fallback)"]
+    A7 --> Gem["Gemini Client (300s Cache + Deterministic Fallback)"]
 ```
 
-### Real Agent Collaboration Flow (`Vacancy Requirement Sync`)
-- When a company vacancy is added (`trigger="job_added"`), `_vacancy_requirement_sync_node` extracts, canonicalizes, and validates `VacancyRequirements` (mandatory skills, preferred skills, education, minimum experience, location, work mode) and stores them in `OrchestratorState["vacancy_requirements"]`.
-- **Skill Intelligence Agent** consumes `vacancy_requirements` to compute `vacancy_gaps` and surface missing mandatory skills at the top of `missing`.
-- **Career Matching Agent** factors synced vacancy skill overlap into career demand alignment.
-- **Course Discovery Agent** prioritizes `vacancy_gaps.mandatory_missing` when selecting `recommended_courses` and generating `roadmap.steps`.
+### Agent Responsibilities and Collaboration
+
+| Node / Agent | Module | Role & Shared-State Exchange |
+| :--- | :--- | :--- |
+| **1. Skill Assessment Agent** | `backend/app/agents/skill_assessment.py` | Evaluates verified assessment scores and weak topics; sets `needs_targeted_practice` when any verified skill scores below `60%`. |
+| **Vacancy Requirement Sync** *(conditional)* | `backend/app/agents/orchestrator.py` | Triggered on `trigger == "job_added"`; extracts, canonicalizes, and Pydantic-validates `VacancyRequirements` into `OrchestratorState["vacancy_requirements"]`. |
+| **2. Skill Intelligence Agent** | `backend/app/agents/skill_intelligence.py` | Classifies strong, weak, missing, unverified, emerging, and outdated/declining skills; consumes `vacancy_requirements` to populate `vacancy_gaps` and prioritize missing mandatory skills. |
+| **Targeted Practice Escalation** *(conditional)* | `backend/app/agents/orchestrator.py` | Appends priority retake preparation directives to `skill_intelligence["targeted_practice"]` when `needs_targeted_practice` is `True`. |
+| **3. Market Intelligence Agent** | `backend/app/agents/market_intelligence.py` | Computes skill and role demand strictly from verified, non-synthetic vacancies (`is_demo == False`) and curated skill taxonomy trends. |
+| **4. Career Matching Agent** | `backend/app/agents/career_matching.py` | Ranks career roles using the 6-component weighted score, verified non-synthetic vacancy counts, and `vacancy_requirements` skill overlap. |
+| **5. Job Requirement & Opportunity Agent** | `backend/app/agents/job_matching.py` | Filters out `is_demo == True`, unverified, and expired vacancies; scores remaining verified jobs against student skills, location, work mode, experience, and salary. |
+| **6. Course Discovery & Learning Path Agent** | `backend/app/agents/course_discovery.py` | Consumes `skill_intelligence` (`weak`, `missing`, `vacancy_gaps.mandatory_missing`) and `careers` to recommend verified direct-URL courses and build `roadmap` steps. |
+| **7. AI Career Mentor Agent** | `backend/app/agents/career_mentor.py` | Synthesizes `skill_intelligence`, `careers`, `top_jobs`, and `roadmap` into `mentor_brief` and powers interactive `/api/mentor/chat` responses. |
 
 ---
 
-## Data Integrity & Verification
+## Technology Stack
 
-- **Synthetic Vacancy Exclusion**: Curated sample records in `backend/app/data/jobs_demo.json` (`is_demo=True`) are seeded with `verification_status="Synthetic Demo"` and `last_verified_date=None`. They are strictly excluded from `/api/jobs`, `/api/jobs/{id}` (`404`), `job_matching`, `career_matching`, `market_intelligence`, and `/api/dashboard`.
-- **Job Verification Lifecycle**: Manually submitted vacancies are saved with `is_demo=False` and `verification_status="Pending Verification"`. Only non-synthetic vacancies with `Verified` status, an `https://` `apply_url`, a non-empty `source`, a `last_verified_date`, and a non-expired deadline appear in verified top-job matches.
-- **Permitted External Job Feed**: `POST /api/jobs/sync` supports a configured `https://` JSON employer/board feed (`JOB_FEED_URL`) and never scrapes websites or fabricates live listings when unconfigured.
-- **Course Catalogue Verification**: `is_verified_course()` requires a direct `https://` URL (blocking `youtube.com/results` search URLs and `Pending Verification` entries) plus complete title, provider, teaching language, audio, and subtitle metadata. Unverified syllabus references are excluded from `/api/courses/recommended`, `roadmap` steps, `/api/courses/{id}/equivalents`, and `GET /api/courses?verified_only=true`.
-
----
-
-## Eight-Language Support & Accessibility
-
-- **8 Application Languages**: English (`en`), Tamil (`ta`), Hindi (`hi`), Telugu (`te`), Kannada (`kn`), Malayalam (`ml`), Bengali (`bn`), and Marathi (`mr`), stored in `frontend/src/i18n/locales/` with verified key parity across all 104 translation keys. The brand name **ThiranSetu** remains untranslated across all locales.
-- **Separation of Concerns**: Application UI language (`app_language`) and preferred course learning language (`learning_language`) are managed independently.
-- **Accessibility**: Semantic landmarks, accessible form controls (`aria-invalid`, `aria-describedby`, `role="alert"` error messages on `Input`, `Select`, and `TextArea`), labeled `ProgressBar` indicators, `Escape`-key handling on the mobile navigation drawer, and automated `axe-core` checks in Vitest.
+- **Frontend**: React 18, TypeScript 5.6, Vite 5, Tailwind CSS 3, React Router v6, TanStack React Query v5, `i18next`, `react-i18next`
+- **Backend**: Python 3.13, FastAPI, Uvicorn, Pydantic v2, `pydantic-settings`, `httpx`
+- **Database**: SQLite with SQLAlchemy 2 ORM (`backend/app/db/models.py`, `backend/app/db/session.py`)
+- **AI and Agent Orchestration**: LangGraph (`StateGraph`), Google Gemini API (`gemini-2.5-flash` via `httpx` in `backend/app/services/gemini_client.py` with SHA-256 response caching and deterministic fallback)
+- **Data Processing**: Deterministic regex/taxonomy job description requirement extraction (`extract_requirements_from_text`), skill canonicalization (`canonical_skill`), and weighted scoring (`backend/app/services/scoring.py`)
+- **Visualization**: Recharts (readiness trend, skill proficiency, and market demand charts)
+- **Testing and Quality Assurance**: `pytest`, `ruff`, Vitest, React Testing Library, `@testing-library/user-event`, `jsdom`, `axe-core`, TypeScript (`tsc -b --noEmit`), ESLint 9 (`typescript-eslint`, `eslint-plugin-react-hooks`)
 
 ---
 
-## Tech Stack & Project Structure
-
-| Layer | Technologies |
-| :--- | :--- |
-| **Backend** | Python 3.13, FastAPI, SQLAlchemy 2, SQLite, Pydantic v2, LangGraph, `httpx`, `ruff`, `pytest` |
-| **Frontend** | React 18, TypeScript 5.6, Vite 5, Tailwind CSS 3, TanStack Query v5, React Router v6, `i18next`, Recharts |
-| **Testing & Lint** | `pytest`, `ruff`, `vitest`, React Testing Library, `axe-core`, `tsc`, ESLint 9 (`typescript-eslint`, `eslint-plugin-react-hooks`) |
+## Project Structure
 
 ```text
 ThiranSetu/
@@ -125,64 +157,102 @@ ThiranSetu/
 ├── README.md
 ├── docs/
 │   ├── API.md
-│   └── EVALUATION_AND_ALIGNMENT.md
+│   ├── EVALUATION_AND_ALIGNMENT.md
+│   └── screenshots/
+│       ├── dashboard.jpg
+│       ├── skill-assessment.png
+│       ├── career-recommendations.jpg
+│       └── learning-roadmap.jpg
 ├── backend/
 │   ├── pyproject.toml
 │   ├── requirements.txt
 │   ├── requirements-dev.txt
 │   ├── app/
-│   │   ├── main.py                # FastAPI app, CORS, security headers, lifespan
-│   │   ├── core/                  # config, scrypt + HS256 JWT, CSRF, rate limiter
-│   │   ├── db/                    # SQLAlchemy models, SQLite session & init, seed
-│   │   ├── data/                  # skills, roles, questions_bank, jobs_demo, courses_demo
-│   │   ├── schemas/               # Pydantic request/response schemas
-│   │   ├── services/              # Gemini client, deterministic scoring, JD extractor, job feed sync
-│   │   ├── agents/                # 7 agents + LangGraph StateGraph orchestrator
-│   │   └── api/routers/           # auth, profile, assessments, insights, jobs, learning
-│   └── tests/                     # pytest API, security, integrity & agent integration tests
+│   │   ├── main.py
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   ├── rate_limit.py
+│   │   │   └── security.py
+│   │   ├── db/
+│   │   │   ├── models.py
+│   │   │   ├── seed.py
+│   │   │   └── session.py
+│   │   ├── data/
+│   │   │   ├── catalog.py
+│   │   │   ├── courses_demo.json
+│   │   │   ├── jobs_demo.json
+│   │   │   ├── questions_bank.json
+│   │   │   ├── roles.json
+│   │   │   └── skills.json
+│   │   ├── schemas/
+│   │   │   └── all.py
+│   │   ├── services/
+│   │   │   ├── gemini_client.py
+│   │   │   ├── job_ingestion.py
+│   │   │   └── scoring.py
+│   │   ├── agents/
+│   │   │   ├── career_matching.py
+│   │   │   ├── career_mentor.py
+│   │   │   ├── course_discovery.py
+│   │   │   ├── job_matching.py
+│   │   │   ├── market_intelligence.py
+│   │   │   ├── orchestrator.py
+│   │   │   ├── skill_assessment.py
+│   │   │   ├── skill_intelligence.py
+│   │   │   └── state.py
+│   │   └── api/
+│   │       ├── deps.py
+│   │       └── routers/
+│   │           ├── assessments.py
+│   │           ├── auth.py
+│   │           ├── insights.py
+│   │           ├── jobs.py
+│   │           ├── learning.py
+│   │           └── profile.py
+│   └── tests/
+│       ├── conftest.py
+│       ├── test_assessments_and_intelligence.py
+│       ├── test_auth_and_profile.py
+│       ├── test_enhancements.py
+│       └── test_jobs_careers_courses.py
 └── frontend/
     ├── eslint.config.js
+    ├── index.html
     ├── package.json
+    ├── postcss.config.js
+    ├── tailwind.config.ts
+    ├── tsconfig.json
     ├── vite.config.ts
+    ├── public/
+    │   └── favicon.svg
     └── src/
-        ├── api/                   # typed fetch client (in-memory token + CSRF) & TS types
-        ├── components/            # UI primitives, JobCard, JobAddForm, AppShell, ProtectedRoute
-        ├── hooks/                 # useAuth, useTheme
-        ├── i18n/                  # 8-language i18next config & locale JSONs
-        ├── lib/                   # formatting & API error mapping helpers
-        ├── pages/                 # 16 pages (Landing, Auth, Dashboard, Jobs, Courses, Mentor, etc.)
-        └── test/                  # Vitest + RTL + axe-core test suite
+        ├── App.tsx
+        ├── main.tsx
+        ├── api/
+        ├── components/
+        ├── hooks/
+        ├── i18n/
+        │   └── locales/
+        ├── lib/
+        ├── pages/
+        └── test/
 ```
 
 ---
 
-## API Overview
-
-Interactive OpenAPI documentation is available at `http://127.0.0.1:8000/docs` when the backend is running.
-
-- **Health**: `GET /api/health`
-- **Auth (`/api/auth`)**: `POST /register`, `POST /login`, `POST /refresh`, `POST /logout`, `GET /me`
-- **Profile & Taxonomy**: `GET /api/profile`, `PUT /api/profile`, `GET /api/skills`, `GET /api/roles`
-- **Assessments**: `GET /api/assessments/available`, `POST /api/assessments/start`, `POST /api/assessments/{attempt_id}/submit`, `GET /api/assessments/history`, `GET /api/skills/verified`
-- **Orchestrator & Insights**: `POST /api/agents/run`, `GET /api/agents/latest`, `GET /api/intelligence`, `GET /api/market`, `GET /api/careers`, `PUT /api/careers/target`, `GET /api/dashboard`
-- **Jobs & Applications**: `GET /api/jobs`, `GET /api/jobs/{job_id}`, `POST /api/jobs/extract`, `POST /api/jobs/sync`, `POST /api/jobs`, `GET /api/applications`, `POST /api/applications`, `PATCH /api/applications/{app_id}`, `DELETE /api/applications/{app_id}`
-- **Courses, Roadmap & Mentor**: `GET /api/courses`, `GET /api/courses/recommended`, `GET /api/courses/{course_id}/equivalents`, `GET /api/roadmap`, `POST /api/roadmap/regenerate`, `PATCH /api/roadmap/steps/{step_id}`, `GET /api/mentor/suggestions`, `POST /api/mentor/chat`
-
----
-
-## Local Setup & Running
+## Installation and Setup
 
 ### Prerequisites
-- Python 3.11+ (tested on Python 3.13)
+- Python 3.11+
 - Node.js 20+ and `npm`
 
-### 1. Configure Environment
+### 1. Environment Configuration
 ```bash
 cp .env.example backend/.env
 ```
-Update `JWT_SECRET` in `backend/.env` with a strong random secret (32+ characters). Never commit `backend/.env`.
+Edit `backend/.env` and set a strong random `JWT_SECRET` (at least 32 characters). Never commit `backend/.env`.
 
-### 2. Start the Backend
+### 2. Backend Setup and Startup
 ```bash
 cd backend
 python3 -m venv .venv
@@ -190,49 +260,57 @@ source .venv/bin/activate
 pip install -r requirements-dev.txt
 uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
+- Database tables are initialized automatically on startup via `init_db()` in FastAPI's lifespan handler (`backend/app/main.py`).
 - Backend API: `http://127.0.0.1:8000`
+- OpenAPI Docs: `http://127.0.0.1:8000/docs`
 - Health Check: `http://127.0.0.1:8000/api/health`
 
-### 3. Start the Frontend
+### 3. Frontend Setup and Startup
 ```bash
 cd frontend
 npm install
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
-- Application URL: `http://127.0.0.1:5173/`
+- Local Application URL: `http://127.0.0.1:5173/`
+
+### 4. Production Frontend Build
+```bash
+cd frontend
+npm run build
+```
 
 ---
 
 ## Environment Variables
 
-| Variable | Required | Default | Description |
+| Variable | Purpose | Required | Safe Example Value |
 | :--- | :--- | :--- | :--- |
-| `ENVIRONMENT` | No | `development` | `development`, `test`, or `production` |
-| `DATABASE_URL` | No | `sqlite:///./thiransetu.db` | SQLAlchemy database connection URL |
-| `JWT_SECRET` | Yes (prod) | Dev fallback | Signing secret for HS256 JWTs (32+ chars required in production) |
-| `CORS_ORIGINS` | No | `http://localhost:5173,http://127.0.0.1:5173` | Allowed frontend origins (comma-separated) |
-| `GEMINI_API_KEY` | No | `""` | Google Gemini API key; deterministic fallback runs if omitted |
-| `GEMINI_MODEL` | No | `gemini-2.5-flash` | Gemini model identifier |
-| `LLM_ENABLED` | No | `true` | Enable/disable Gemini calls |
-| `REDIS_URL` | Yes (prod) | `""` | Redis URL for distributed rate limiting (fails closed with `503` in production if unreachable) |
-| `JOB_FEED_URL` | No | `""` | Optional permitted `https://` JSON job feed URL for `/api/jobs/sync` |
-| `TRUST_PROXY_HEADERS` | No | `false` | Whether to trust `X-Forwarded-For` headers |
-| `SEED_DEMO_DATA` | No | `true` | Seeds reference demo records on empty DB (always tagged `is_demo=True`, `Synthetic Demo`, excluded from live results) |
+| `ENVIRONMENT` | Runtime environment (`development`, `test`, `production`) | Optional | `development` |
+| `DATABASE_URL` | SQLAlchemy database connection URL | Optional | `sqlite:///./thiransetu.db` |
+| `JWT_SECRET` | Signing secret for HS256 JWT access and refresh tokens | Required (prod) | `replace-with-at-least-32-random-characters` |
+| `CORS_ORIGINS` | Comma-separated allowed frontend origins | Optional | `http://localhost:5173,http://127.0.0.1:5173` |
+| `GEMINI_API_KEY` | Google Gemini API key (deterministic fallback runs if omitted) | Optional | `your-gemini-api-key-here` |
+| `GEMINI_MODEL` | Gemini model identifier | Optional | `gemini-2.5-flash` |
+| `LLM_ENABLED` | Enable or disable external Gemini API calls | Optional | `true` |
+| `REDIS_URL` | Redis URL for distributed rate limiting (`503` fail-closed in prod if unreachable) | Required (prod) | `redis://127.0.0.1:6379/0` |
+| `JOB_FEED_URL` | Permitted `https://` JSON job feed URL for `/api/jobs/sync` | Optional | `https://example.com/jobs.json` |
+| `TRUST_PROXY_HEADERS` | Whether to trust `X-Forwarded-For` client IP headers | Optional | `false` |
+| `SEED_DEMO_DATA` | Seeds reference demo records on empty DB (tagged `Synthetic Demo`, excluded from live results) | Optional | `true` |
 
 ---
 
-## Testing, Linting & Build Verification
+## Testing and Quality Assurance
 
-### Backend
+### Backend (`pytest`, `compileall`, `ruff`)
 ```bash
 cd backend
 .venv/bin/python -m compileall -q app
 .venv/bin/python -m pytest -v
 .venv/bin/ruff check app tests
 ```
-Verified output: **21 passed, 0 failed, 0 skipped** (`pytest -v`), **`All checks passed!`** (`ruff`).
+Covers authentication, refresh-token rotation and reuse detection, CSRF enforcement, rate limiting, user data isolation, skill assessments, synthetic vacancy exclusion, course verification, and LangGraph agent collaboration.
 
-### Frontend
+### Frontend (`vitest`, `tsc`, `eslint`, `axe-core`, `vite build`)
 ```bash
 cd frontend
 npm run test
@@ -240,4 +318,64 @@ npm run typecheck
 npm run lint
 npm run build
 ```
-Verified output: **11 passed, 0 failed, 0 skipped** (`vitest run`, including `axe-core` accessibility checks), **`0` TypeScript errors** (`tsc -b --noEmit`), **`0` ESLint errors/warnings** (`eslint .`), and clean production bundle (`vite build`).
+Covers i18n locale parity across all 8 languages, API error mapping, in-memory token handling, `JobAddForm` requirement extraction, orchestrator trace rendering, `axe-core` accessibility checks, TypeScript compilation, ESLint rules, and production bundling.
+
+---
+
+## Security and Data Integrity
+
+> "ThiranSetu prioritizes reliable, source-backed information and transparent verification. Unavailable or undisclosed information is identified clearly rather than being presented as confirmed data."
+
+- **Authentication & Password Hashing**: Uses `scrypt` salted password hashing (`backend/app/core/security.py`).
+- **Token Handling & CSRF Protection**: Short-lived HS256 JWT access tokens are kept strictly in memory (`frontend/src/api/client.ts`), paired with `HttpOnly` refresh-token rotation, token-version/JTI reuse detection, and double-submit `ts_csrf` cookie + `X-CSRF-Token` header verification.
+- **Authorization & Data Isolation**: Protected endpoints require `get_current_user` (`backend/app/api/deps.py`) and scope database queries by `user.id`.
+- **Rate Limiting**: Protects sensitive auth and AI mentor endpoints using `backend/app/core/rate_limit.py`, failing closed with HTTP `503` in production if Redis is unreachable.
+- **Input & External URL Validation**: Enforces Pydantic v2 schemas (`backend/app/schemas/all.py`), requires `https://` for external `JOB_FEED_URL` and `apply_url` links, and sanitizes URLs on the frontend via `safeUrl()`.
+- **Environment-Based Secrets**: All secrets (`JWT_SECRET`, `GEMINI_API_KEY`, `REDIS_URL`) are loaded from environment variables and excluded from Git via `.gitignore`.
+- **Synthetic Data & Course Verification**: `is_demo=True` vacancies are tagged `Synthetic Demo` and excluded from `/api/jobs`, `/api/jobs/{id}`, `job_matching`, `career_matching`, `market_intelligence`, and `/api/dashboard`. Courses without verified direct `https://` URLs are excluded from verified recommendations, roadmap steps, and multilingual equivalence matching. Undisclosed salaries and unverified ratings render as `Not Disclosed` and `Not Verified`.
+
+---
+
+## Supported Languages
+
+ThiranSetu supports **8 application interface languages** (`frontend/src/i18n/locales/`), keeping the **ThiranSetu** brand name untranslated across every locale:
+
+- English (`en`)
+- Tamil (`ta`)
+- Hindi (`hi`)
+- Telugu (`te`)
+- Kannada (`kn`)
+- Malayalam (`ml`)
+- Bengali (`bn`)
+- Marathi (`mr`)
+
+**Interface Language vs. Course Language**: The application UI language (`app_language`) and preferred course learning language (`learning_language`) are configured independently. Course search and discovery track teaching language, audio languages, and subtitle languages separately.
+
+---
+
+## Roadmap
+
+### Implemented
+- Full-stack FastAPI + React + TypeScript + SQLAlchemy platform with 16 frontend routes.
+- LangGraph 7-agent orchestrator with `Vacancy Requirement Sync` and `Targeted Practice Escalation`.
+- `scrypt` auth, in-memory JWTs, refresh-token rotation, CSRF protection, and Redis/in-memory rate limiting.
+- Synthetic vacancy exclusion (`is_demo=True`), manual JD extraction (`Pending Verification`), and `https://` feed sync.
+- Verified direct-URL course filtering and outcome-based vs. skill-overlap multilingual equivalence.
+- 8-language UI (`i18n`), dark/light theme, Recharts analytics, ESLint 9, `ruff`, `pytest`, `vitest`, and `axe-core` checks.
+
+### In Progress
+- Expanding verified direct-URL regional-language course coverage across all 8 supported languages.
+- Automated verification workflows for manually submitted company vacancies.
+
+### Planned Enhancements
+- PostgreSQL production migration support and Alembic schema migrations.
+- End-to-end Playwright browser test suite covering full authenticated multi-page flows.
+
+---
+
+## GitHub Repository Presentation
+
+- **Suggested Repository Description**:
+  `Agentic AI-powered skill intelligence, career recommendation, company-based job matching and multilingual learning platform.`
+- **Suggested Repository Topics**:
+  `agentic-ai`, `career-intelligence`, `skill-assessment`, `career-recommendation`, `job-matching`, `langgraph`, `fastapi`, `react`, `typescript`, `multilingual-learning`
