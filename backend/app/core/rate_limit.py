@@ -124,10 +124,11 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         elif not request.url.path.startswith(("/docs", "/redoc", "/openapi.json")):
             response.headers.setdefault(
                 "Content-Security-Policy",
-                "default-src 'self'; script-src 'self' 'unsafe-inline'; "
+                "default-src 'self'; script-src 'self'; "
                 "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
                 "font-src 'self' https://fonts.gstatic.com data:; "
-                "img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'",
+                "img-src 'self' data: https:; connect-src 'self'; "
+                "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
             )
         return response
 
