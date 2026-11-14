@@ -119,8 +119,16 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers.setdefault("X-Frame-Options", "DENY")
         response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
         response.headers.setdefault("Permissions-Policy", "geolocation=(self), camera=(), microphone=()")
-        if not request.url.path.startswith(("/docs", "/redoc", "/openapi.json")):
+        if request.url.path.startswith("/api/"):
             response.headers.setdefault("Content-Security-Policy", "default-src 'none'; frame-ancestors 'none'")
+        elif not request.url.path.startswith(("/docs", "/redoc", "/openapi.json")):
+            response.headers.setdefault(
+                "Content-Security-Policy",
+                "default-src 'self'; script-src 'self' 'unsafe-inline'; "
+                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+                "font-src 'self' https://fonts.gstatic.com data:; "
+                "img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'",
+            )
         return response
 
 
