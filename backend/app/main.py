@@ -3,11 +3,15 @@
 from __future__ import annotations
 
 import logging
+import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app import __version__
 from app.api.routers import assessments, auth, insights, jobs, learning, profile
@@ -67,6 +71,24 @@ def create_app() -> FastAPI:
             "version": __version__,
             "llm_mode": "gemini" if get_settings().llm_available else "deterministic",
         }
+
+    static_dir_env = os.environ.get("STATIC_DIR", "").strip()
+    if static_dir_env:
+        static_root = Path(static_dir_env).resolve()
+        index_html = static_root / "index.html"
+        assets_dir = static_root / "assets"
+        if assets_dir.is_dir():
+            application.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+        if index_html.is_file():
+
+            @application.get("/{full_path:path}", include_in_schema=False)
+            def serve_spa(full_path: str):
+                if full_path.startswith("api/") or full_path == "api":
+                    raise HTTPException(status_code=404, detail="Not Found")
+                candidate = (static_root / full_path).resolve()
+                if full_path and candidate.is_relative_to(static_root) and candidate.is_file():
+                    return FileResponse(candidate)
+                return FileResponse(index_html)
 
     return application
 
