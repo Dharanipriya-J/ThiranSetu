@@ -1,0 +1,771 @@
+[
+  {
+    "id": "nptel-py-ds",
+    "title": "Programming, Data Structures and Algorithms using Python",
+    "platform": "NPTEL",
+    "provider": "IIT Madras",
+    "url": "https://nptel.ac.in/courses/106106145",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml",
+      "bn",
+      "mr"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 24,
+    "price": {
+      "is_free": true,
+      "label": "Free (Optional exam fee)"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "Algorithmic problem solving",
+      "File handling and debugging"
+    ],
+    "verification": "Curated Catalogue (NPTEL Official Course Page)"
+  },
+  {
+    "id": "coursera-py4e",
+    "title": "Python for Everybody Specialization",
+    "platform": "Coursera",
+    "provider": "University of Michigan",
+    "url": "https://www.coursera.org/specializations/python",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "hi",
+      "ta",
+      "bn"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 32,
+    "price": {
+      "is_free": true,
+      "label": "Free Audit / Paid Certificate"
+    },
+    "rating": null,
+    "skills": [
+      "Python",
+      "SQL"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "JSON & REST APIs",
+      "SQL database basics"
+    ],
+    "verification": "Curated Catalogue (Coursera Official Page)"
+  },
+  {
+    "id": "yt-py-ta",
+    "title": "Python Full Course in Tamil",
+    "platform": "YouTube",
+    "provider": "Error Makes Clever (Curated)",
+    "url": null,
+    "language": "ta",
+    "audio_languages": [
+      "ta"
+    ],
+    "subtitle_languages": [
+      "ta",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 10,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "OOP and functions",
+      "File handling and debugging"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "yt-py-hi",
+    "title": "Complete Python Course in Hindi",
+    "platform": "YouTube",
+    "provider": "CodeWithHarry (Curated)",
+    "url": null,
+    "language": "hi",
+    "audio_languages": [
+      "hi"
+    ],
+    "subtitle_languages": [
+      "hi",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 12,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "OOP and functions",
+      "File handling and debugging"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "edx-sql-stanford",
+    "title": "Databases: Relational Databases and SQL",
+    "platform": "edX",
+    "provider": "Stanford Online",
+    "url": "https://www.edx.org/learn/sql/stanford-university-databases-relational-databases-and-sql",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 16,
+    "price": {
+      "is_free": true,
+      "label": "Free Audit / Paid Certificate"
+    },
+    "rating": null,
+    "skills": [
+      "SQL"
+    ],
+    "outcomes": [
+      "Relational schema design",
+      "SQL joins and aggregations",
+      "Subqueries and CTEs",
+      "Query optimization"
+    ],
+    "verification": "Curated Catalogue (edX Official Page)"
+  },
+  {
+    "id": "yt-sql-hi",
+    "title": "SQL Complete Tutorial in Hindi (Joins, Subqueries, Window Functions)",
+    "platform": "YouTube",
+    "provider": "Apna College (Curated)",
+    "url": null,
+    "language": "hi",
+    "audio_languages": [
+      "hi"
+    ],
+    "subtitle_languages": [
+      "hi",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 6,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "SQL"
+    ],
+    "outcomes": [
+      "Relational schema design",
+      "SQL joins and aggregations",
+      "Subqueries and CTEs"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "coursera-pbi-ms",
+    "title": "Microsoft Power BI Data Analyst Professional Certificate",
+    "platform": "Coursera",
+    "provider": "Microsoft",
+    "url": "https://www.coursera.org/professional-certificates/microsoft-power-bi-data-analyst",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "hi"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 40,
+    "price": {
+      "is_free": false,
+      "label": "Paid / Financial Aid"
+    },
+    "rating": null,
+    "skills": [
+      "Power BI",
+      "Data Visualization",
+      "Excel"
+    ],
+    "outcomes": [
+      "Power Query ETL",
+      "Star schema data modelling",
+      "DAX measures",
+      "Interactive KPI dashboards"
+    ],
+    "verification": "Curated Catalogue (Coursera Official Page)"
+  },
+  {
+    "id": "udemy-excel-pro",
+    "title": "Microsoft Excel — Excel from Beginner to Advanced",
+    "platform": "Udemy",
+    "provider": "Kyle Pew (Curated)",
+    "url": "https://www.udemy.com/topic/excel/",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 18,
+    "price": {
+      "is_free": false,
+      "label": "Paid"
+    },
+    "rating": null,
+    "skills": [
+      "Excel",
+      "Data Visualization"
+    ],
+    "outcomes": [
+      "Lookup formulas (XLOOKUP/INDEX-MATCH)",
+      "PivotTables",
+      "Conditional formatting",
+      "Data cleaning"
+    ],
+    "verification": "Curated Catalogue (Reference Catalogue)"
+  },
+  {
+    "id": "coursera-ml-ng",
+    "title": "Machine Learning Specialization",
+    "platform": "Coursera",
+    "provider": "DeepLearning.AI & Stanford",
+    "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "hi",
+      "ta",
+      "bn"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 48,
+    "price": {
+      "is_free": true,
+      "label": "Free Audit / Paid Certificate"
+    },
+    "rating": null,
+    "skills": [
+      "Machine Learning",
+      "Python",
+      "Statistics"
+    ],
+    "outcomes": [
+      "Supervised regression & classification",
+      "Tree ensembles & neural nets",
+      "Model evaluation & bias-variance",
+      "Scikit-learn pipelines"
+    ],
+    "verification": "Curated Catalogue (Coursera Official Page)"
+  },
+  {
+    "id": "nptel-ml-iitm",
+    "title": "Introduction to Machine Learning",
+    "platform": "NPTEL",
+    "provider": "IIT Madras",
+    "url": "https://nptel.ac.in/courses/106106139",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml",
+      "bn",
+      "mr"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 32,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Machine Learning",
+      "Statistics"
+    ],
+    "outcomes": [
+      "Supervised regression & classification",
+      "SVM and Decision Trees",
+      "Model evaluation & bias-variance"
+    ],
+    "verification": "Curated Catalogue (NPTEL Official Page)"
+  },
+  {
+    "id": "edx-web-harvard",
+    "title": "CS50's Web Programming with Python and JavaScript",
+    "platform": "edX",
+    "provider": "HarvardX",
+    "url": "https://www.edx.org/learn/web-development/harvard-university-cs50-s-web-programming-with-python-and-javascript",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 45,
+    "price": {
+      "is_free": true,
+      "label": "Free Audit / Paid Certificate"
+    },
+    "rating": null,
+    "skills": [
+      "JavaScript",
+      "Python",
+      "SQL",
+      "React",
+      "Git"
+    ],
+    "outcomes": [
+      "DOM & modern JavaScript",
+      "React component state",
+      "REST API design",
+      "SQL migrations and security"
+    ],
+    "verification": "Curated Catalogue (edX Official Page)"
+  },
+  {
+    "id": "yt-react-ta",
+    "title": "React JS Full Course in Tamil",
+    "platform": "YouTube",
+    "provider": "Tutor Joes / Balachandra (Curated)",
+    "url": null,
+    "language": "ta",
+    "audio_languages": [
+      "ta"
+    ],
+    "subtitle_languages": [
+      "ta",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 11,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "React",
+      "JavaScript"
+    ],
+    "outcomes": [
+      "React component state",
+      "Hooks and effects",
+      "Client-side routing",
+      "REST API integration"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "yt-node-en",
+    "title": "Node.js & Express REST APIs Crash Course",
+    "platform": "freeCodeCamp",
+    "provider": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 8,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Node.js",
+      "JavaScript",
+      "SQL"
+    ],
+    "outcomes": [
+      "Async Node.js runtime",
+      "REST API routing and middleware",
+      "Database integration"
+    ],
+    "verification": "Curated Catalogue (freeCodeCamp Official Curriculum)"
+  },
+  {
+    "id": "coursera-genai-google",
+    "title": "Generative AI with Large Language Models",
+    "platform": "Coursera",
+    "provider": "DeepLearning.AI & AWS",
+    "url": "https://www.coursera.org/learn/generative-ai-with-llms",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "hi"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 16,
+    "price": {
+      "is_free": true,
+      "label": "Free Audit / Paid Certificate"
+    },
+    "rating": null,
+    "skills": [
+      "Generative AI",
+      "Python",
+      "LangGraph"
+    ],
+    "outcomes": [
+      "LLM prompting & evaluation",
+      "Retrieval-augmented generation",
+      "Tool use and agent workflows"
+    ],
+    "verification": "Curated Catalogue (Coursera Official Page)"
+  },
+  {
+    "id": "nptel-cloud-iitk",
+    "title": "Cloud Computing",
+    "platform": "NPTEL",
+    "provider": "IIT Kharagpur",
+    "url": "https://nptel.ac.in/courses/106105167",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml",
+      "bn",
+      "mr"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 24,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Cloud Computing",
+      "Docker",
+      "Linux"
+    ],
+    "outcomes": [
+      "Cloud service models (IaaS/PaaS/SaaS)",
+      "Containerization & orchestration",
+      "Cloud security & IAM"
+    ],
+    "verification": "Curated Catalogue (NPTEL Official Page)"
+  },
+  {
+    "id": "coursera-cyber-google",
+    "title": "Google Cybersecurity Professional Certificate",
+    "platform": "Coursera",
+    "provider": "Google",
+    "url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en",
+      "hi",
+      "ta"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 40,
+    "price": {
+      "is_free": true,
+      "label": "Free Audit / Financial Aid"
+    },
+    "rating": null,
+    "skills": [
+      "Cybersecurity",
+      "Linux",
+      "Python",
+      "SQL"
+    ],
+    "outcomes": [
+      "Network defense & SIEM",
+      "Linux & SQL for security",
+      "OWASP vulnerabilities & incident response"
+    ],
+    "verification": "Curated Catalogue (Coursera Official Page)"
+  },
+  {
+    "id": "yt-fastapi-en",
+    "title": "FastAPI Full Course — Production Python APIs",
+    "platform": "FastAPI Docs",
+    "provider": "freeCodeCamp",
+    "url": "https://fastapi.tiangolo.com/tutorial/",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 7,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "FastAPI",
+      "Python",
+      "SQL"
+    ],
+    "outcomes": [
+      "Pydantic validation",
+      "Async REST endpoints",
+      "JWT authentication and SQLAlchemy"
+    ],
+    "verification": "Curated Catalogue (FastAPI Official Tutorial)"
+  },
+  {
+    "id": "yt-ts-en",
+    "title": "TypeScript for React Developers",
+    "platform": "TypeScript Docs",
+    "provider": "freeCodeCamp",
+    "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
+    "language": "en",
+    "audio_languages": [
+      "en"
+    ],
+    "subtitle_languages": [
+      "en"
+    ],
+    "difficulty": "intermediate",
+    "duration_hours": 5,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "TypeScript",
+      "React",
+      "JavaScript"
+    ],
+    "outcomes": [
+      "Type narrowing & generics",
+      "Typed React props and hooks",
+      "Safe API response typing"
+    ],
+    "verification": "Curated Catalogue (TypeScript Official Handbook)"
+  },
+  {
+    "id": "yt-py-te",
+    "title": "Python Programming Complete Course in Telugu",
+    "platform": "YouTube",
+    "provider": "PythonLife Telugu (Curated)",
+    "url": null,
+    "language": "te",
+    "audio_languages": [
+      "te"
+    ],
+    "subtitle_languages": [
+      "te",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 11,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "OOP and functions",
+      "File handling and debugging"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "yt-py-kn",
+    "title": "Python Programming Full Tutorial in Kannada",
+    "platform": "YouTube",
+    "provider": "Engineering in Kannada (Curated)",
+    "url": null,
+    "language": "kn",
+    "audio_languages": [
+      "kn"
+    ],
+    "subtitle_languages": [
+      "kn",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 10,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "OOP and functions",
+      "File handling and debugging"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "yt-py-ml",
+    "title": "Python Programming Full Course in Malayalam",
+    "platform": "YouTube",
+    "provider": "Brototype Malayalam (Curated)",
+    "url": null,
+    "language": "ml",
+    "audio_languages": [
+      "ml"
+    ],
+    "subtitle_languages": [
+      "ml",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 12,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "OOP and functions",
+      "File handling and debugging"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "yt-sql-bn",
+    "title": "SQL & Relational Databases Full Course in Bengali",
+    "platform": "YouTube",
+    "provider": "Anisul Islam (Curated)",
+    "url": null,
+    "language": "bn",
+    "audio_languages": [
+      "bn"
+    ],
+    "subtitle_languages": [
+      "bn",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 8,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "SQL"
+    ],
+    "outcomes": [
+      "Relational schema design",
+      "SQL joins and aggregations",
+      "Subqueries and CTEs"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  },
+  {
+    "id": "yt-py-mr",
+    "title": "Python Programming Full Course in Marathi",
+    "platform": "YouTube",
+    "provider": "Marathi Tech (Curated)",
+    "url": null,
+    "language": "mr",
+    "audio_languages": [
+      "mr"
+    ],
+    "subtitle_languages": [
+      "mr",
+      "en"
+    ],
+    "difficulty": "beginner",
+    "duration_hours": 10,
+    "price": {
+      "is_free": true,
+      "label": "Free"
+    },
+    "rating": null,
+    "skills": [
+      "Python"
+    ],
+    "outcomes": [
+      "Python fundamentals",
+      "Data structures",
+      "OOP and functions",
+      "File handling and debugging"
+    ],
+    "verification": "Syllabus Reference (Direct URL Pending Verification)"
+  }
+]

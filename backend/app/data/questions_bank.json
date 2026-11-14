@@ -1,0 +1,441 @@
+[
+  {
+    "id": "py-b-1", "skill": "Python", "level": "beginner", "type": "mcq", "topic": "Data Structures",
+    "prompt": "Which built-in Python type is ordered, mutable, and allows duplicate elements?",
+    "code": null,
+    "options": ["tuple", "set", "list", "frozenset"],
+    "answer": "list",
+    "explanation": "A Python list preserves insertion order, allows modification, and permits duplicate values."
+  },
+  {
+    "id": "py-b-2", "skill": "Python", "level": "beginner", "type": "code_output", "topic": "Control Flow",
+    "prompt": "What is the exact output printed by this Python snippet?",
+    "code": "nums = [1, 2, 3, 4]\nprint(sum(x for x in nums if x % 2 == 0))",
+    "options": null,
+    "answer": "6",
+    "explanation": "The even numbers in [1, 2, 3, 4] are 2 and 4; their sum is 6."
+  },
+  {
+    "id": "py-b-3", "skill": "Python", "level": "beginner", "type": "debugging", "topic": "Functions",
+    "prompt": "This function raises a TypeError when called without arguments. What is the bug?",
+    "code": "def greet(name):\n    return f'Hello, {name}'\ngreet()",
+    "options": ["Missing default value for parameter name", "f-string syntax is invalid", "return cannot be used with strings", "Indentation error"],
+    "answer": "Missing default value for parameter name",
+    "explanation": "Calling greet() without an argument requires a default like def greet(name='Guest')."
+  },
+  {
+    "id": "py-b-4", "skill": "Python", "level": "beginner", "type": "mcq", "topic": "Dictionaries",
+    "prompt": "How do you safely read key 'role' from dictionary `user` with fallback 'student' if missing?",
+    "code": null,
+    "options": ["user['role'] or 'student'", "user.get('role', 'student')", "user.fetch('role', 'student')", "user.find('role')"],
+    "answer": "user.get('role', 'student')",
+    "explanation": "dict.get(key, default) returns the default without raising KeyError."
+  },
+  {
+    "id": "py-i-1", "skill": "Python", "level": "intermediate", "type": "code_output", "topic": "Mutable Defaults",
+    "prompt": "What is printed by the second call?",
+    "code": "def add_item(item, box=[]):\n    box.append(item)\n    return box\nadd_item('a')\nprint(add_item('b'))",
+    "options": null,
+    "answer": "['a', 'b']",
+    "explanation": "Default list arguments are evaluated once at function definition, so 'box' is shared across calls."
+  },
+  {
+    "id": "py-i-2", "skill": "Python", "level": "intermediate", "type": "debugging", "topic": "Comprehensions & Generators",
+    "prompt": "A developer consumes a generator twice, and the second loop prints nothing. Why?",
+    "code": "gen = (x * 2 for x in range(3))\nfirst = list(gen)\nsecond = list(gen)",
+    "options": ["Generators are single-pass iterators and become exhausted", "range(3) is empty", "list() mutates range", "Python caches generators as None"],
+    "answer": "Generators are single-pass iterators and become exhausted",
+    "explanation": "Once iterated, a generator is exhausted; materialize into a list or recreate the generator."
+  },
+  {
+    "id": "py-i-3", "skill": "Python", "level": "intermediate", "type": "mcq", "topic": "Error Handling",
+    "prompt": "In a try/except/else/finally block, when does the `else` block execute?",
+    "code": null,
+    "options": ["Always, after finally", "Only when an exception was raised", "Only when the try block raised no exception", "Only if finally returns"],
+    "answer": "Only when the try block raised no exception",
+    "explanation": "The else clause runs only if try completes without raising an exception."
+  },
+  {
+    "id": "py-i-4", "skill": "Python", "level": "intermediate", "type": "mcq", "topic": "Complexity & Data Structures",
+    "prompt": "What is the average time complexity of membership lookup `x in my_set` in Python?",
+    "code": null,
+    "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    "answer": "O(1)",
+    "explanation": "Python sets use hash tables, giving O(1) average lookup."
+  },
+  {
+    "id": "py-a-1", "skill": "Python", "level": "advanced", "type": "mcq", "topic": "Asyncio & Concurrency",
+    "prompt": "Why should CPU-bound tasks not run directly on an asyncio event loop?",
+    "code": null,
+    "options": ["They block the single-threaded event loop and starve concurrent I/O coroutines", "Asyncio disables garbage collection", "Python cannot run arithmetic inside async def", "The GIL prevents await from compiling"],
+    "answer": "They block the single-threaded event loop and starve concurrent I/O coroutines",
+    "explanation": "Use ProcessPoolExecutor or run_in_executor for CPU-heavy work so the event loop stays responsive."
+  },
+  {
+    "id": "py-a-2", "skill": "Python", "level": "advanced", "type": "debugging", "topic": "Security & Hashing",
+    "prompt": "What is the security issue with comparing API tokens using `token == expected`?",
+    "code": "def check_token(token, expected):\n    return token == expected",
+    "options": ["Vulnerable to timing side-channel attacks; use hmac.compare_digest", "Strings cannot be compared in Python 3", "It triggers SQL injection", "It raises RecursionError"],
+    "answer": "Vulnerable to timing side-channel attacks; use hmac.compare_digest",
+    "explanation": "Standard == short-circuits on the first mismatched byte; hmac.compare_digest runs in constant time."
+  },
+  {
+    "id": "py-a-3", "skill": "Python", "level": "advanced", "type": "code_output", "topic": "Closures & Late Binding",
+    "prompt": "What is the printed output?",
+    "code": "funcs = [lambda: i for i in range(3)]\nprint([f() for f in funcs])",
+    "options": null,
+    "answer": "[2, 2, 2]",
+    "explanation": "Closures bind `i` by reference; after the loop finishes, `i` is 2 for all lambdas."
+  },
+  {
+    "id": "py-a-4", "skill": "Python", "level": "advanced", "type": "mcq", "topic": "Typing & Architecture",
+    "prompt": "Which typing construct enables structural subtyping (duck typing) statically checked by mypy/pyright?",
+    "code": null,
+    "options": ["typing.Protocol", "typing.Final", "typing.Literal", "abc.abstractmethod only"],
+    "answer": "typing.Protocol",
+    "explanation": "Protocol defines structural interfaces without requiring explicit inheritance."
+  },
+
+  {
+    "id": "sql-b-1", "skill": "SQL", "level": "beginner", "type": "mcq", "topic": "Filtering & Aggregation",
+    "prompt": "Which SQL clause filters grouped rows AFTER `GROUP BY` has been applied?",
+    "code": null,
+    "options": ["WHERE", "HAVING", "ORDER BY", "DISTINCT"],
+    "answer": "HAVING",
+    "explanation": "WHERE filters rows before grouping; HAVING filters groups after aggregation."
+  },
+  {
+    "id": "sql-b-2", "skill": "SQL", "level": "beginner", "type": "mcq", "topic": "Joins",
+    "prompt": "Which join returns all rows from the left table and matching rows from the right table (NULL when unmatched)?",
+    "code": null,
+    "options": ["INNER JOIN", "LEFT JOIN", "CROSS JOIN", "SELF JOIN"],
+    "answer": "LEFT JOIN",
+    "explanation": "LEFT OUTER JOIN preserves every row from the left table."
+  },
+  {
+    "id": "sql-b-3", "skill": "SQL", "level": "beginner", "type": "debugging", "topic": "NULL Handling",
+    "prompt": "This query returns 0 rows even though rows with NULL department exist. What is wrong?",
+    "code": "SELECT * FROM students WHERE department = NULL;",
+    "options": ["Must use `department IS NULL` instead of `= NULL`", "SELECT * is invalid with WHERE", "Strings must be quoted", "Missing GROUP BY"],
+    "answer": "Must use `department IS NULL` instead of `= NULL`",
+    "explanation": "In SQL three-valued logic, `= NULL` evaluates to UNKNOWN; use IS NULL."
+  },
+  {
+    "id": "sql-b-4", "skill": "SQL", "level": "beginner", "type": "mcq", "topic": "Aggregations",
+    "prompt": "What is the difference between `COUNT(*)` and `COUNT(email)`?",
+    "code": null,
+    "options": ["COUNT(*) counts all rows; COUNT(email) excludes rows where email is NULL", "They are always identical", "COUNT(email) counts distinct values", "COUNT(*) fails on empty tables"],
+    "answer": "COUNT(*) counts all rows; COUNT(email) excludes rows where email is NULL",
+    "explanation": "Column-specific COUNT(col) ignores NULL values in that column."
+  },
+  {
+    "id": "sql-i-1", "skill": "SQL", "level": "intermediate", "type": "mcq", "topic": "Window Functions",
+    "prompt": "Which window function assigns consecutive ranks without gaps when two rows tie?",
+    "code": null,
+    "options": ["ROW_NUMBER()", "RANK()", "DENSE_RANK()", "NTILE(4)"],
+    "answer": "DENSE_RANK()",
+    "explanation": "DENSE_RANK() gives tied rows the same rank without skipping the next integer."
+  },
+  {
+    "id": "sql-i-2", "skill": "SQL", "level": "intermediate", "type": "scenario", "topic": "Subqueries & CTEs",
+    "prompt": "You need employees earning strictly above their own department's average salary. Which approach is clearest?",
+    "code": null,
+    "options": ["A CTE computing AVG(salary) per department joined back on department_id", "ORDER BY salary DESC LIMIT 1", "WHERE salary > AVG(salary)", "CROSS JOIN without WHERE"],
+    "answer": "A CTE computing AVG(salary) per department joined back on department_id",
+    "explanation": "A CTE or window function AVG(salary) OVER (PARTITION BY department_id) cleanly compares each row to its department average."
+  },
+  {
+    "id": "sql-i-3", "skill": "SQL", "level": "intermediate", "type": "debugging", "topic": "Joins & Duplicates",
+    "prompt": "After joining `orders` to `order_items`, `SUM(orders.total_amount)` doubles for multi-item orders. Why?",
+    "code": null,
+    "options": ["One-to-many join duplicates order rows before summing; aggregate items first or use a subquery", "SUM cannot sum decimals", "INNER JOIN drops NULLs", "GROUP BY is missing ORDER BY"],
+    "answer": "One-to-many join duplicates order rows before summing; aggregate items first or use a subquery",
+    "explanation": "Joining a parent table to a child table multiplies parent rows; aggregate at the right grain before joining."
+  },
+  {
+    "id": "sql-i-4", "skill": "SQL", "level": "intermediate", "type": "mcq", "topic": "Set Operations",
+    "prompt": "Why is `UNION ALL` faster than `UNION` when duplicates do not need removal?",
+    "code": null,
+    "options": ["UNION ALL appends results without a distinct sort/hash pass", "UNION locks the database", "UNION ALL skips WHERE clauses", "UNION only works on integers"],
+    "answer": "UNION ALL appends results without a distinct sort/hash pass",
+    "explanation": "UNION deduplicates rows, requiring an extra sort or hash step."
+  },
+  {
+    "id": "sql-a-1", "skill": "SQL", "level": "advanced", "type": "mcq", "topic": "Indexing & Query Plans",
+    "prompt": "Why can `WHERE YEAR(created_at) = 2026` prevent an index on `created_at` from being used?",
+    "code": null,
+    "options": ["Applying a function to the indexed column makes the predicate non-SARGable; use a range predicate", "Indexes cannot store dates", "YEAR() returns a string", "SQL requires two indexes"],
+    "answer": "Applying a function to the indexed column makes the predicate non-SARGable; use a range predicate",
+    "explanation": "Use `created_at >= '2026-01-01' AND created_at < '2027-01-01'` to allow an index range scan."
+  },
+  {
+    "id": "sql-a-2", "skill": "SQL", "level": "advanced", "type": "scenario", "topic": "Transactions & Security",
+    "prompt": "Which statement prevents SQL injection when accepting user input in Python/SQLAlchemy?",
+    "code": null,
+    "options": ["Parameterized / bound queries", "Stripping single quotes manually", "Using f-strings with .strip()", "Base64 encoding the SQL"],
+    "answer": "Parameterized / bound queries",
+    "explanation": "Bound parameters keep SQL structure separate from user-supplied values."
+  },
+  {
+    "id": "sql-a-3", "skill": "SQL", "level": "advanced", "type": "mcq", "topic": "Composite Indexes",
+    "prompt": "Given a B-tree index on `(company_id, posted_date)`, which query benefits most?",
+    "code": null,
+    "options": ["WHERE company_id = 42 AND posted_date >= '2026-11-01'", "WHERE posted_date >= '2026-11-01' only", "WHERE LOWER(title) LIKE '%data%'", "ORDER BY title"],
+    "answer": "WHERE company_id = 42 AND posted_date >= '2026-11-01'",
+    "explanation": "B-tree composite indexes satisfy leftmost prefix equality + range predicates efficiently."
+  },
+  {
+    "id": "sql-a-4", "skill": "SQL", "level": "advanced", "type": "mcq", "topic": "Query Optimization",
+    "prompt": "What does `EXPLAIN ANALYZE` show that plain `EXPLAIN` does not?",
+    "code": null,
+    "options": ["Actual execution time and actual row counts observed during execution", "Table creation SQL", "Foreign key names only", "Database user passwords"],
+    "answer": "Actual execution time and actual row counts observed during execution",
+    "explanation": "EXPLAIN shows estimated plan costs; EXPLAIN ANALYZE executes the query and reports actual timings/rows."
+  },
+
+  {
+    "id": "xl-b-1", "skill": "Excel", "level": "beginner", "type": "mcq", "topic": "Formulas",
+    "prompt": "Which formula counts cells in B2:B20 that contain a number greater than 70?",
+    "code": null,
+    "options": ["=COUNT(B2:B20, '>70')", "=COUNTIF(B2:B20, '>70')", "=SUMIF(B2:B20, '>70')", "=IFCOUNT(B2:B20, 70)"],
+    "answer": "=COUNTIF(B2:B20, '>70')",
+    "explanation": "COUNTIF(range, criteria) counts cells meeting a single condition."
+  },
+  {
+    "id": "xl-b-2", "skill": "Excel", "level": "beginner", "type": "mcq", "topic": "Cell Referencing",
+    "prompt": "What does `$A$1` mean when copying a formula across rows and columns?",
+    "code": null,
+    "options": ["Both column A and row 1 stay locked (absolute reference)", "Only row 1 stays locked", "It formats A1 as currency", "It deletes A1"],
+    "answer": "Both column A and row 1 stay locked (absolute reference)",
+    "explanation": "The dollar signs fix both column and row during copy/fill."
+  },
+  {
+    "id": "xl-b-3", "skill": "Excel", "level": "beginner", "type": "scenario", "topic": "Data Summarization",
+    "prompt": "You have 15,000 sales rows with Region, Category, and Revenue. Which tool summarizes Revenue by Region and Category without writing formulas?",
+    "code": null,
+    "options": ["PivotTable", "Spell Check", "Freeze Panes", "Goal Seek"],
+    "answer": "PivotTable",
+    "explanation": "PivotTables aggregate large tabular data dynamically by row/column dimensions."
+  },
+  {
+    "id": "xl-i-1", "skill": "Excel", "level": "intermediate", "type": "mcq", "topic": "Lookups",
+    "prompt": "Why is `XLOOKUP` (or `INDEX/MATCH`) preferred over `VLOOKUP`?",
+    "code": null,
+    "options": ["It can look left or right and does not break if columns are inserted", "VLOOKUP only works on numbers", "XLOOKUP skips formulas", "VLOOKUP cannot handle text"],
+    "answer": "It can look left or right and does not break if columns are inserted",
+    "explanation": "VLOOKUP requires the lookup column to be leftmost and uses a hardcoded column index."
+  },
+  {
+    "id": "xl-i-2", "skill": "Excel", "level": "intermediate", "type": "debugging", "topic": "Error Handling",
+    "prompt": "A lookup formula returns `#N/A` for valid missing entries. How should you display `'Not Found'` cleanly?",
+    "code": null,
+    "options": ["Wrap with IFERROR(..., 'Not Found') or use XLOOKUP's if_not_found argument", "Convert cells to text", "Hide the column", "Use SUM()"],
+    "answer": "Wrap with IFERROR(..., 'Not Found') or use XLOOKUP's if_not_found argument",
+    "explanation": "IFNA/IFERROR or XLOOKUP's built-in 4th argument handles missing lookups gracefully."
+  },
+  {
+    "id": "xl-i-3", "skill": "Excel", "level": "intermediate", "type": "mcq", "topic": "Power Query & Automation",
+    "prompt": "Which Excel feature lets you repeatably clean, merge, and reshape messy CSV files without brittle VBA?",
+    "code": null,
+    "options": ["Power Query (Get & Transform)", "Conditional Formatting", "Data Validation", "Print Titles"],
+    "answer": "Power Query (Get & Transform)",
+    "explanation": "Power Query records repeatable ETL steps that refresh in one click."
+  },
+  {
+    "id": "xl-a-1", "skill": "Excel", "level": "advanced", "type": "mcq", "topic": "Dynamic Arrays",
+    "prompt": "Which Excel function extracts only rows matching multiple boolean criteria and spills automatically?",
+    "code": null,
+    "options": ["FILTER", "CONCAT", "TRIM", "OFFSET"],
+    "answer": "FILTER",
+    "explanation": "FILTER(array, include, [if_empty]) returns dynamic spilled results for complex criteria."
+  },
+  {
+    "id": "xl-a-2", "skill": "Excel", "level": "advanced", "type": "mcq", "topic": "Multi-Criteria Aggregation",
+    "prompt": "Which function sums Sales where Region='South' AND Year=2026?",
+    "code": null,
+    "options": ["SUMIFS", "SUMIF", "DSUM only", "COUNTIFS"],
+    "answer": "SUMIFS",
+    "explanation": "SUMIFS supports multiple criteria pairs."
+  },
+
+  {
+    "id": "pbi-b-1", "skill": "Power BI", "level": "beginner", "type": "mcq", "topic": "ETL & Power Query",
+    "prompt": "Where in Power BI Desktop do you clean columns, split text, and change data types before loading?",
+    "code": null,
+    "options": ["Power Query Editor", "DAX Formula Bar", "Report Canvas", "Publish Dialog"],
+    "answer": "Power Query Editor",
+    "explanation": "Power Query handles data extraction and transformation prior to model load."
+  },
+  {
+    "id": "pbi-b-2", "skill": "Power BI", "level": "beginner", "type": "mcq", "topic": "Visualization",
+    "prompt": "Which visual is best suited for comparing a KPI trend continuously over 12 months?",
+    "code": null,
+    "options": ["Line chart", "Pie chart", "Gauge", "Treemap"],
+    "answer": "Line chart",
+    "explanation": "Line charts clearly communicate change and trends over ordered time periods."
+  },
+  {
+    "id": "pbi-b-3", "skill": "Power BI", "level": "beginner", "type": "mcq", "topic": "Data Modelling",
+    "prompt": "What is the recommended schema design for Power BI analytical models?",
+    "code": null,
+    "options": ["Star schema with fact and dimension tables", "Single flat wide table for everything", "Many-to-many bidirectional links everywhere", "Unrelated disconnected tables"],
+    "answer": "Star schema with fact and dimension tables",
+    "explanation": "A star schema keeps DAX calculations fast, unambiguous, and maintainable."
+  },
+  {
+    "id": "pbi-i-1", "skill": "Power BI", "level": "intermediate", "type": "mcq", "topic": "DAX Measures",
+    "prompt": "Why should KPIs like Profit Margin use a DAX Measure rather than a Calculated Column?",
+    "code": null,
+    "options": ["Measures evaluate dynamically under current slicer/filter context and use less memory", "Calculated columns cannot divide", "Measures are stored as images", "Calculated columns cannot use SUM"],
+    "answer": "Measures evaluate dynamically under current slicer/filter context and use less memory",
+    "explanation": "Ratios must aggregate numerator and denominator dynamically in filter context."
+  },
+  {
+    "id": "pbi-i-2", "skill": "Power BI", "level": "intermediate", "type": "mcq", "topic": "DAX Filter Context",
+    "prompt": "Which DAX function modifies filter context when evaluating an expression?",
+    "code": null,
+    "options": ["CALCULATE", "RELATED", "CONCATENATE", "FORMAT"],
+    "answer": "CALCULATE",
+    "explanation": "CALCULATE is the primary DAX function for altering filter context."
+  },
+  {
+    "id": "pbi-a-1", "skill": "Power BI", "level": "advanced", "type": "scenario", "topic": "Security & Governance",
+    "prompt": "Regional managers must only see sales data for their own region in a shared Power BI report. What should you configure?",
+    "code": null,
+    "options": ["Row-Level Security (RLS) roles using USERPRINCIPALNAME()", "Separate PBIX files per manager", "Hide the slicer visually", "Export to PDF"],
+    "answer": "Row-Level Security (RLS) roles using USERPRINCIPALNAME()",
+    "explanation": "RLS enforces data filtering at the semantic model layer per authenticated user."
+  },
+
+  {
+    "id": "ml-b-1", "skill": "Machine Learning", "level": "beginner", "type": "mcq", "topic": "Problem Framing",
+    "prompt": "Predicting a continuous house price in lakhs is what type of supervised learning task?",
+    "code": null,
+    "options": ["Regression", "Classification", "Clustering", "Dimensionality reduction"],
+    "answer": "Regression",
+    "explanation": "Regression predicts continuous numerical targets."
+  },
+  {
+    "id": "ml-b-2", "skill": "Machine Learning", "level": "beginner", "type": "mcq", "topic": "Evaluation & Validation",
+    "prompt": "Why do we split data into training and test sets before fitting a model?",
+    "code": null,
+    "options": ["To evaluate generalization on unseen data and detect overfitting", "To double dataset size", "To remove missing values", "To speed up CSV loading"],
+    "answer": "To evaluate generalization on unseen data and detect overfitting",
+    "explanation": "Training accuracy alone hides memorization/overfitting."
+  },
+  {
+    "id": "ml-b-3", "skill": "Machine Learning", "level": "beginner", "type": "mcq", "topic": "Preprocessing",
+    "prompt": "Which models are sensitive to feature scaling (e.g. StandardScaler)?",
+    "code": null,
+    "options": ["k-NN, SVM, and gradient-descent models", "Decision Trees only", "Random Forest only", "Naive Bayes only"],
+    "answer": "k-NN, SVM, and gradient-descent models",
+    "explanation": "Distance-based and gradient-based algorithms depend on feature magnitudes."
+  },
+  {
+    "id": "ml-i-1", "skill": "Machine Learning", "level": "intermediate", "type": "scenario", "topic": "Imbalanced Classification",
+    "prompt": "In a fraud dataset with 99% legitimate and 1% fraud cases, a dummy classifier gets 99% accuracy. Which metric is more informative?",
+    "code": null,
+    "options": ["Precision-Recall AUC and F1-score on the minority class", "Accuracy only", "R-squared", "MSE"],
+    "answer": "Precision-Recall AUC and F1-score on the minority class",
+    "explanation": "Accuracy is misleading under severe class imbalance; PR-AUC / F1 evaluate minority class detection."
+  },
+  {
+    "id": "ml-i-2", "skill": "Machine Learning", "level": "intermediate", "type": "debugging", "topic": "Data Leakage",
+    "prompt": "Scaling the entire dataset before train/test split inflates cross-validation scores. What is this error called?",
+    "code": null,
+    "options": ["Data leakage; fit scalers only inside training folds via a Pipeline", "Vanishing gradient", "Underfitting", "Regularization"],
+    "answer": "Data leakage; fit scalers only inside training folds via a Pipeline",
+    "explanation": "Fitting transformers on test data leaks test distribution statistics into training."
+  },
+  {
+    "id": "ml-a-1", "skill": "Machine Learning", "level": "advanced", "type": "mcq", "topic": "Bias-Variance & Ensembles",
+    "prompt": "How does Gradient Boosting primarily differ from Random Forest?",
+    "code": null,
+    "options": ["Boosting trains shallow trees sequentially to correct prior residuals, reducing bias", "Random Forest cannot classify", "Boosting trains trees independently in parallel", "Random Forest uses neural networks"],
+    "answer": "Boosting trains shallow trees sequentially to correct prior residuals, reducing bias",
+    "explanation": "Bagging (Random Forest) averages independent deep trees to reduce variance; boosting sequentially fits residuals."
+  },
+
+  {
+    "id": "js-b-1", "skill": "JavaScript", "level": "beginner", "type": "mcq", "topic": "Variables & Scope",
+    "prompt": "Which keyword declares a block-scoped variable that cannot be reassigned?",
+    "code": null,
+    "options": ["const", "var", "let", "global"],
+    "answer": "const",
+    "explanation": "const creates a block-scoped read-only binding."
+  },
+  {
+    "id": "js-b-2", "skill": "JavaScript", "level": "beginner", "type": "code_output", "topic": "Array Methods",
+    "prompt": "What does this expression evaluate to?",
+    "code": "console.log([1, 2, 3].filter(n => n > 1).length)",
+    "options": null,
+    "answer": "2",
+    "explanation": "filter returns [2, 3], whose length is 2."
+  },
+  {
+    "id": "js-i-1", "skill": "JavaScript", "level": "intermediate", "type": "mcq", "topic": "Async & Promises",
+    "prompt": "How do you run two independent `fetch()` calls concurrently and wait for both?",
+    "code": null,
+    "options": ["await Promise.all([fetch(a), fetch(b)])", "await fetch(a); await fetch(b);", "setTimeout(fetch, 0)", "JSON.parse([a, b])"],
+    "answer": "await Promise.all([fetch(a), fetch(b)])",
+    "explanation": "Promise.all awaits multiple concurrent promises in parallel."
+  },
+  {
+    "id": "js-a-1", "skill": "JavaScript", "level": "advanced", "type": "mcq", "topic": "Security & DOM",
+    "prompt": "Why should untrusted user text be inserted via `element.textContent` instead of `element.innerHTML`?",
+    "code": null,
+    "options": ["textContent prevents Cross-Site Scripting (XSS) by treating input strictly as text", "innerHTML is deprecated in HTML5", "textContent compresses JSON", "innerHTML only accepts numbers"],
+    "answer": "textContent prevents Cross-Site Scripting (XSS) by treating input strictly as text",
+    "explanation": "innerHTML parses HTML/script payloads, creating XSS vulnerabilities."
+  },
+
+  {
+    "id": "cloud-b-1", "skill": "Cloud Computing", "level": "beginner", "type": "mcq", "topic": "Service Models",
+    "prompt": "Google Cloud Run, where you deploy a container without managing OS patching or VMs, is best described as:",
+    "code": null,
+    "options": ["Serverless container PaaS / CaaS", "Bare-metal colocation", "On-premise LAN", "Desktop virtualization"],
+    "answer": "Serverless container PaaS / CaaS",
+    "explanation": "Cloud Run abstracts servers and autoscaling while running standard containers."
+  },
+  {
+    "id": "cloud-i-1", "skill": "Cloud Computing", "level": "intermediate", "type": "mcq", "topic": "Containers & Docker",
+    "prompt": "Why do multi-stage Dockerfiles produce smaller, safer production images?",
+    "code": null,
+    "options": ["Build compilers and dev tools stay in the builder stage and are excluded from the runtime image", "They disable TLS", "They store secrets inside layers", "They remove Linux"],
+    "answer": "Build compilers and dev tools stay in the builder stage and are excluded from the runtime image",
+    "explanation": "Only compiled artifacts and runtime dependencies are copied into the final slim stage."
+  },
+  {
+    "id": "cloud-a-1", "skill": "Cloud Computing", "level": "advanced", "type": "mcq", "topic": "Secrets & IAM",
+    "prompt": "What is the safest way to provide an API key to a Cloud Run service?",
+    "code": null,
+    "options": ["Store it in Secret Manager and mount it as an env var/volume with least-privilege IAM", "Commit it to .env in Git", "Hardcode in Dockerfile ENV", "Pass it in URL query strings"],
+    "answer": "Store it in Secret Manager and mount it as an env var/volume with least-privilege IAM",
+    "explanation": "Secret Manager avoids baking credentials into images or source control."
+  },
+
+  {
+    "id": "sec-b-1", "skill": "Cybersecurity", "level": "beginner", "type": "mcq", "topic": "OWASP Basics",
+    "prompt": "Which vulnerability occurs when untrusted input is concatenated into a database query string?",
+    "code": null,
+    "options": ["SQL Injection", "Clickjacking", "DNS Spoofing", "Buffer Underflow"],
+    "answer": "SQL Injection",
+    "explanation": "Concatenating input allows attackers to alter SQL syntax; use parameterized queries."
+  },
+  {
+    "id": "sec-i-1", "skill": "Cybersecurity", "level": "intermediate", "type": "mcq", "topic": "Authentication",
+    "prompt": "Why are salted memory-hard KDFs like Argon2 or scrypt used for password storage instead of plain SHA-256?",
+    "code": null,
+    "options": ["Fast hashes like SHA-256 can be brute-forced at billions of guesses/sec on GPUs; salts stop rainbow tables", "SHA-256 cannot hash ASCII", "Argon2 is reversible", "Salts encrypt the database connection"],
+    "answer": "Fast hashes like SHA-256 can be brute-forced at billions of guesses/sec on GPUs; salts stop rainbow tables",
+    "explanation": "Memory-hard KDFs + unique salts dramatically raise the cost of offline cracking."
+  },
+  {
+    "id": "sec-a-1", "skill": "Cybersecurity", "level": "advanced", "type": "mcq", "topic": "API Security",
+    "prompt": "Why is trusting arbitrary `X-Forwarded-For` headers in rate limiting dangerous without a trusted proxy?",
+    "code": null,
+    "options": ["Clients can spoof different IP values per request to bypass per-IP rate limits", "It breaks HTTPS certificates", "It disables CORS", "It corrupts JWT signatures"],
+    "answer": "Clients can spoof different IP values per request to bypass per-IP rate limits",
+    "explanation": "Only honour forwarding headers when behind a trusted reverse proxy that overwrites or strips them."
+  }
+]

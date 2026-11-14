@@ -1,0 +1,128 @@
+{
+  "brand": "ThiranSetu",
+  "tagline": "Bridging Skills. Connecting Opportunities.",
+  "nav": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "assessments": "Skill Assessments",
+    "intelligence": "Skill Intelligence",
+    "market": "Market Trends",
+    "careers": "Career Matches",
+    "jobs": "Job Opportunities",
+    "courses": "Courses",
+    "roadmap": "Learning Roadmap",
+    "mentor": "AI Career Mentor",
+    "analytics": "Progress Analytics",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "retry": "Retry",
+    "back": "Back",
+    "logout": "Sign Out",
+    "login": "Sign In",
+    "register": "Create Account",
+    "demoData": "Reference Catalogue",
+    "deterministicMode": "Deterministic Fallback Mode",
+    "geminiMode": "Gemini AI Active",
+    "notDisclosed": "Not Disclosed",
+    "notVerified": "Not Verified",
+    "compatibilityNote": "Compatibility scores measure skill & preference alignment, not probability of employment.",
+    "skipToContent": "Skip to main content",
+    "themeToggle": "Toggle light/dark theme",
+    "language": "App Language"
+  },
+  "landing": {
+    "heroTitle": "Verify Your Real Skills. Match Real Company Requirements.",
+    "heroSubtitle": "ThiranSetu connects verified student assessments, skill obsolescence intelligence, market trends, salary-aware job matching, and multilingual learning roadmaps through 7 collaborating AI agents.",
+    "ctaStart": "Get Started Free",
+    "ctaLogin": "Sign In",
+    "agentsTitle": "7 Specialized AI Agents + Central Orchestrator",
+    "featuresTitle": "Built for Real Career Readiness"
+  },
+  "auth": {
+    "loginTitle": "Sign in to ThiranSetu",
+    "registerTitle": "Create your ThiranSetu account",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "password": "Password (8+ chars, letter & digit)",
+    "noAccount": "New to ThiranSetu?",
+    "hasAccount": "Already have an account?",
+    "sessionExpired": "Your session expired. Please sign in again."
+  },
+  "dashboard": {
+    "title": "Student Intelligence Dashboard",
+    "completeness": "Profile Completeness",
+    "verifiedSkills": "Verified Skills",
+    "topCareers": "Top Career Recommendations",
+    "topJobs": "Best Company Matches",
+    "roadmapProgress": "Roadmap Progress",
+    "outdatedAlerts": "Outdated / Declining Alerts",
+    "emergingSkills": "Emerging Industry Skills",
+    "salaryOverview": "Salary Alignment",
+    "runAgents": "Refresh Agent Analysis"
+  },
+  "assessments": {
+    "title": "Verified Skill Assessments",
+    "subtitle": "Prove your actual proficiency. One test never permanently classifies you — retake anytime after learning.",
+    "start": "Start Assessment",
+    "submit": "Submit Answers",
+    "retake": "Retake Assessment",
+    "history": "Assessment History",
+    "verifiedTable": "Self-Reported vs Verified Skills",
+    "selfReported": "Self-Reported",
+    "verifiedScore": "Verified Score",
+    "strongTopics": "Strong Topics",
+    "weakTopics": "Topics to Improve"
+  },
+  "jobs": {
+    "title": "Company Requirement Job Matching",
+    "applyNow": "Apply Now (Official Site)",
+    "applyNotice": "Opens the official company application page. ThiranSetu never submits applications on your behalf.",
+    "saveJob": "Save Job",
+    "saved": "Saved",
+    "trackerTab": "Saved & Application Tracker",
+    "addTab": "Add Vacancy",
+    "extractPreview": "Preview Extracted Requirements",
+    "mandatorySkills": "Mandatory Skills",
+    "preferredSkills": "Preferred Skills",
+    "missingSkills": "Missing Skills",
+    "salaryFit": "Salary Fit",
+    "locationFit": "Location Fit"
+  },
+  "courses": {
+    "title": "Multilingual Course Discovery",
+    "recommended": "Recommended for Your Gaps",
+    "catalogue": "Course Catalogue",
+    "findEquivalent": "Find Equivalent in My Language",
+    "freeOnly": "Free Only"
+  },
+  "roadmap": {
+    "title": "Adaptive Learning Roadmap",
+    "regenerate": "Regenerate Roadmap",
+    "reassess": "Reassess Skill",
+    "reassessRequired": "Reassessment recommended after completion"
+  },
+  "mentor": {
+    "title": "AI Career Mentor",
+    "placeholder": "Ask about your careers, missing skills, companies, courses, or salary...",
+    "send": "Send",
+    "suggestions": "Suggested Questions"
+  },
+  "errors": {
+    "unauthorized": "Please sign in to continue.",
+    "validation": "Please check the highlighted fields.",
+    "rate_limit": "Too many requests. Please wait a moment and try again.",
+    "network": "Network error — verify the backend server is running.",
+    "server": "Temporary server error. Please try again.",
+    "not_found": "Requested record was not found.",
+    "http": "Request could not be completed."
+  }
+}

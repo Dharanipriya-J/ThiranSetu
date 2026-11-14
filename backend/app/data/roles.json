@@ -1,0 +1,107 @@
+[
+  {
+    "id": "data_analyst",
+    "title": "Data Analyst",
+    "description": "Transforms raw organizational datasets into actionable KPIs, dashboards, and business insights using SQL, Python, Excel, and BI tools.",
+    "skills": [
+      {"skill": "SQL", "weight": 0.30, "importance": "core"},
+      {"skill": "Python", "weight": 0.25, "importance": "core"},
+      {"skill": "Excel", "weight": 0.20, "importance": "core"},
+      {"skill": "Power BI", "weight": 0.15, "importance": "core"},
+      {"skill": "Data Visualization", "weight": 0.10, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "data_scientist",
+    "title": "Data Scientist",
+    "description": "Builds statistical models, experiments, and machine learning pipelines to solve predictive and optimization problems.",
+    "skills": [
+      {"skill": "Python", "weight": 0.30, "importance": "core"},
+      {"skill": "Machine Learning", "weight": 0.30, "importance": "core"},
+      {"skill": "SQL", "weight": 0.20, "importance": "core"},
+      {"skill": "Statistics", "weight": 0.10, "importance": "supporting"},
+      {"skill": "Data Visualization", "weight": 0.10, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "ml_engineer",
+    "title": "Machine Learning Engineer",
+    "description": "Designs, trains, optimizes, and deploys production machine learning models and data pipelines.",
+    "skills": [
+      {"skill": "Python", "weight": 0.30, "importance": "core"},
+      {"skill": "Machine Learning", "weight": 0.30, "importance": "core"},
+      {"skill": "Docker", "weight": 0.15, "importance": "supporting"},
+      {"skill": "Cloud Computing", "weight": 0.15, "importance": "supporting"},
+      {"skill": "SQL", "weight": 0.10, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "ai_engineer",
+    "title": "AI Engineer",
+    "description": "Builds LLM-powered applications, retrieval-augmented generation (RAG), and multi-agent systems with safe evaluation.",
+    "skills": [
+      {"skill": "Python", "weight": 0.30, "importance": "core"},
+      {"skill": "Generative AI", "weight": 0.25, "importance": "core"},
+      {"skill": "LangGraph", "weight": 0.15, "importance": "supporting"},
+      {"skill": "FastAPI", "weight": 0.15, "importance": "supporting"},
+      {"skill": "Machine Learning", "weight": 0.15, "importance": "core"}
+    ]
+  },
+  {
+    "id": "python_developer",
+    "title": "Python Developer",
+    "description": "Develops scalable backend services, REST APIs, automation tooling, and database-backed applications in Python.",
+    "skills": [
+      {"skill": "Python", "weight": 0.35, "importance": "core"},
+      {"skill": "SQL", "weight": 0.25, "importance": "core"},
+      {"skill": "FastAPI", "weight": 0.20, "importance": "core"},
+      {"skill": "Docker", "weight": 0.10, "importance": "supporting"},
+      {"skill": "Git", "weight": 0.10, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "full_stack_developer",
+    "title": "Full Stack Developer",
+    "description": "Builds end-to-end web applications spanning responsive React/TypeScript interfaces, APIs, and relational databases.",
+    "skills": [
+      {"skill": "JavaScript", "weight": 0.25, "importance": "core"},
+      {"skill": "React", "weight": 0.25, "importance": "core"},
+      {"skill": "Node.js", "weight": 0.20, "importance": "core"},
+      {"skill": "SQL", "weight": 0.15, "importance": "core"},
+      {"skill": "TypeScript", "weight": 0.15, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "business_analyst",
+    "title": "Business Analyst",
+    "description": "Bridges business stakeholders and engineering teams through KPI analysis, dashboards, and requirements modelling.",
+    "skills": [
+      {"skill": "Excel", "weight": 0.30, "importance": "core"},
+      {"skill": "SQL", "weight": 0.25, "importance": "core"},
+      {"skill": "Power BI", "weight": 0.25, "importance": "core"},
+      {"skill": "Data Visualization", "weight": 0.20, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "cloud_engineer",
+    "title": "Cloud Engineer",
+    "description": "Architects, automates, and operates containerized cloud infrastructure, CI/CD pipelines, and observability.",
+    "skills": [
+      {"skill": "Cloud Computing", "weight": 0.35, "importance": "core"},
+      {"skill": "Linux", "weight": 0.25, "importance": "core"},
+      {"skill": "Docker", "weight": 0.25, "importance": "core"},
+      {"skill": "Python", "weight": 0.15, "importance": "supporting"}
+    ]
+  },
+  {
+    "id": "cybersecurity_analyst",
+    "title": "Cybersecurity Analyst",
+    "description": "Monitors, assesses, and hardens web applications, networks, and cloud workloads against security vulnerabilities.",
+    "skills": [
+      {"skill": "Cybersecurity", "weight": 0.40, "importance": "core"},
+      {"skill": "Linux", "weight": 0.25, "importance": "core"},
+      {"skill": "Python", "weight": 0.20, "importance": "supporting"},
+      {"skill": "Cloud Computing", "weight": 0.15, "importance": "supporting"}
+    ]
+  }
+]
